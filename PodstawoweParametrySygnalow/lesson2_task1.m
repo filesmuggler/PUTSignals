@@ -33,7 +33,7 @@ t = [0:delta_t:k*ts-delta_t];   % time vector
 l_t = length(t);                % length (num of samples) of time vector
 
 ## OPERATIONS
-y = sawtooth(2*pi*f*t).*A;      % creating sawtooth signal with proper amplitude
+y = sawtooth(2*pi*f*t).*A;      % creating sawtooth signal with proper amplitude (if want triangular wave use triplot() function)
 plot(t,y,'-r');                 % plotting the samples (use stem() to see if no shift)
 
 avg = mean(abs(y))              % calculating average value of the signal (arithmetic avg of absolute values of the signal)
