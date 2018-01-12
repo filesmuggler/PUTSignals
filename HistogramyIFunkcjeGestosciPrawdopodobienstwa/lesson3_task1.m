@@ -33,9 +33,9 @@ data = std.*randn(num_sam,1)+m_value;       % generate random signal with 20 sam
 #### NON-NORMALIZED
 [heights,locations] = hist(data,10);        % getting histogram heights in the locations
 width = locations(2) - locations(1);        % getting width of the single location
-sh1 = sum(heights)
+sh1 = sum(heights)                          % debugging
 pdf = heights / num_sam;                    % some weird shit normalizing the histogram with respect to the probablity density function (PDF)
-sp1 = sum(pdf)
+sp1 = sum(pdf)                              % debugging - sum of pdf should be equal to 1
 bar(locations,heights,'hist');              % 'baring' histogram
 hold on;                                    % keeping histogram on the figure
 n = [locations(1):width:locations(10)];     % creating vector for PDF
@@ -50,9 +50,9 @@ grid on;
 figure(2);
 [heights,locations] = hist(data,10);        % getting histogram heights in the locations
 width = locations(2) - locations(1);        % getting width of the single location
-sh2 = sum(heights)
+sh2 = sum(heights)                          % debugging
 pdf = heights / (num_sam*width);            % some weird shit normalizing the histogram with respect to the probablity density function (PDF)
-sp2 = sum(pdf)
+sp2 = sum(pdf)                              % debugging - it's scaled so does not have to be 1
 bar(locations,heights,'hist');              % 'baring' histogram
 hold on;                                    % keeping histogram on the figure
 n = [locations(1):width:locations(10)];     % creating vector for PDF
@@ -61,3 +61,5 @@ title("NORMALIZED");
 xlabel("values");
 ylabel("number of samples");
 grid on;
+
+meanValueData = mean(data)                  % debugging the mean value
