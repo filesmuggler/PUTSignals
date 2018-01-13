@@ -63,3 +63,6 @@ ylabel("number of samples");
 grid on;
 
 meanValueData = mean(data)                  % debugging the mean value
+variance = mean(((data.-mean(data)).^2))    % obtaining variance from definition
+standd = sqrt(variance)                     % obstaning standard deviation from definition
+
